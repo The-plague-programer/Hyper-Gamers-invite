@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Gamers Discord Server</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome to Hyper Gamers</h1>
+        <p>Join our vibrant gaming community and become a part of the hypers!</p>
+
+        <!-- Hexagon buttons for About Us, Rules, and Requirements -->
+        <div id="hexagon-grid">
+            <div class="hexagon" data-content="about" data-icon="💬"></div>
+            <div class="hexagon" data-content="rules" data-icon="📜"></div>
+            <div class="hexagon" data-content="requirements" data-icon="🔑"></div>
+            <div class="hexagon" data-content="join" data-icon="🎮"></div>
+        </div>
+
+        <!-- Content Sections that will be revealed -->
+        <div id="about-section" class="content-section">
+            <h2>About Us</h2>
+            <p>We are a community of passionate gamers who love to connect, play, and share experiences in a friendly and competitive environment!</p>
+        </div>
+        <div id="rules-section" class="content-section">
+            <h2>Server Rules</h2>
+            <ul>
+                <li>Respect everyone.</li>
+                <li>No spamming.</li>
+                <li>Keep it PG-13.</li>
+                <li>No hate speech or trolling.</li>
+            </ul>
+        </div>
+        <div id="requirements-section" class="content-section">
+            <h2>Requirements to Join</h2>
+            <ul>
+                <li>Must have a Discord account.</li>
+                <li>Be respectful to all members.</li>
+                <li>Be active in chats and games.</li>
+            </ul>
+        </div>
+        <div id="join-section" class="content-section">
+            <h2>How to Join</h2>
+            <p>Click on the 'Join Discord Server' button, fill out your details, and you're in!</p>
+        </div>
+
+        <!-- Join Form -->
+        <form action="https://discord.gg/ucGQTCZPAr" method="GET" target="_blank">
+            <input type="text" name="username" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="submit" value="Join Discord Server">
+        </form>
+
+        <p>
+            Need Discord? <a href="https://discord.com/download" target="_blank">Download here</a>.
+        </p>
+        <p>
+            Questions? Contact us at @the_plague_programer (in Instagram</a>.
+        </p>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <div id="switch"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

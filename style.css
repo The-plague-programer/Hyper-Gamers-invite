@@ -1,0 +1,172 @@
+/* Root theme variables */
+:root {
+    --color-primary: #ee75d2;
+    --color-secondary: #75d8ee;
+    --color-tertiary: #deee75;
+    --color-quaternary: #9375ee;
+    --color-surface: #1e1e2f;
+    --color-on-surface: #ffffff;
+    --bg-gradient: linear-gradient(to bottom, var(--color-quaternary), var(--color-surface));
+    --hexagon-size: 8vmin;
+    --gap: 0.2vmin;
+    --hover-brightness: 1.2;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--color-on-surface);
+    background: var(--bg-gradient);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form input[type="submit"] {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+form input[type="submit"]:hover {
+    filter: brightness(var(--hover-brightness));
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hexagonal animation setup */
+.hexagon {
+    width: var(--hexagon-size);
+    aspect-ratio: 1;
+    background-color: var(--color-primary);
+    clip-path: polygon(
+        50% 0%,
+        93.3% 25%,
+        93.3% 75%,
+        50% 100%,
+        6.7% 75%,
+        6.7% 25%
+    );
+    position: relative;
+    margin: var(--gap);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hexagon:hover {
+    transform: scale(1.1);
+    background-color: var(--color-secondary);
+}
+
+.hexagon::after {
+    content: attr(data-icon);
+    font-size: 1.5rem;
+    color: var(--color-on-surface);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#hexagon-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Content sections */
+.content-section {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--color-quaternary);
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.content-section ul {
+    font-size: 1.2rem;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Theme toggle button */
+#switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: var(--color-surface);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#switch::after {
+    content: "🌙";
+    font-size: 1.5rem;
+    color: var(--color-on-surface);
+    transition: transform 0.3s ease;
+}
+
+#switch.checked::after {
+    content: "☀️";
+    transform: translateX(20px);
+}
